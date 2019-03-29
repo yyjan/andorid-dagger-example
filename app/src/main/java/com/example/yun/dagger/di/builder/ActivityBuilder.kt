@@ -12,7 +12,6 @@ abstract class ActivityBuilder {
     // ContributesAndroidInjector 어노테이션을 달고, 반환타입을 통해 해당 Activity Subcomponent 생성
     // SubComponent 와 연결할 modules 정의,  Module 들이 실제 의존성 객체를 생성
     @ActivityScope
-    @ContributesAndroidInjector
-        (modules = [MainActivityModule::class])
+    @ContributesAndroidInjector(modules = [MainActivityModule::class])
     abstract fun bindMainActivity(): MainActivity
 }

@@ -2,6 +2,7 @@ package com.example.yun.dagger.di.component
 
 import com.example.yun.dagger.AppApplication
 import com.example.yun.dagger.di.builder.ActivityBuilder
+import com.example.yun.dagger.di.module.ApiModule
 import com.example.yun.dagger.di.module.AppModule
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -13,6 +14,7 @@ import javax.inject.Singleton
     modules = [
         AndroidSupportInjectionModule::class,
         AppModule::class,
+        ApiModule::class,
         ActivityBuilder::class]
 )
 @Singleton
