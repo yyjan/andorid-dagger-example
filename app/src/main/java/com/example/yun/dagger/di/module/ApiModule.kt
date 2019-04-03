@@ -2,7 +2,6 @@ package com.example.yun.dagger.di.module
 
 import com.example.yun.dagger.data.api.ApiConstants
 import com.example.yun.dagger.data.api.ApiService
-import com.example.yun.dagger.data.api.HeaderInterceptor
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -29,7 +28,6 @@ class ApiModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient = OkHttpClient.Builder()
-        .addInterceptor(HeaderInterceptor())
         .addInterceptor(loggingInterceptor)
         .build()
 
