@@ -17,12 +17,12 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
 
-// DaggerFragment 상속받아 Component 연결
 class ProfileFragment : DaggerFragment() {
 
-    // DataRepository 타입 의존성 주입 요청
     @Inject
     lateinit var repository: DataRepository
+
+    var defaultUser : String = "yyjan"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         setHasOptionsMenu(true)
@@ -32,12 +32,16 @@ class ProfileFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // load profile data
         loadData()
     }
 
     @SuppressLint("CheckResult")
     fun loadData() {
-        repository.loadUser("yyjan")
+
+        val user = defaultUser
+        repository.loadUser(user)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe {

@@ -6,7 +6,6 @@ import dagger.android.DaggerApplication
 
 class AppApplication : DaggerApplication() {
 
-    // AppComponent 에서 정의한 Builder 로 Component 와 연결
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
         return DaggerAppComponent.builder().create(this)
     }
