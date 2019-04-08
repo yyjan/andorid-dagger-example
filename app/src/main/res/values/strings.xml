@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">android-dagger-example</string>
 
-    <string name="title_profile">github user</string>
-    <string name="title_profile_load">github user (%s)</string>
+    <string name="title_profile">Github User</string>
+    <string name="title_profile_load">Github User (%s)</string>
 
     <string name="profile_followers">Followers</string>
     <string name="profile_following">Following</string>
